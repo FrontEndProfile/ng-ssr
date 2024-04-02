@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-3 view" *ngFor="let product of cards_list$ | async">
+      <div class="card mb-3">
+        <img class="card-img-top" [src]="product.media_base_url" [alt]="product.media_base_alt">
+        <div class="card-body">
+          <h5 class="card-title fs-5">{{ product.card_name }}</h5>
+          <p class="fs-6 text-black-50">Card ID: {{ product.id }}</p>
+          <p class="fs-6" [ngClass]="{ 'text-success': product.card_publish, 'text-danger': !product.card_publish }">
+            Card Publish: {{ product.card_publish ? 'Yes' : 'No' }}
+          </p>
+          <a [routerLink]="['/detail', product.id]" class="btn btn-primary">View Product</a>
+        </div>
+      </div>
+    </div>
+  </div>

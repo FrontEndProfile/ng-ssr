@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,OnInit,inject } from '@angular/core';
+import { Firestore ,collection , collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-ssr';
+
+  products: any[] = [];
+
+
+  // firestore : Firestore = inject(Firestore);
+  // view$: Observable<any[]>
+
+  constructor(){
+    // const aCollection = collection(this.firestore, 'media')
+    // this.view$ = collectionData(aCollection)
+  }
+
+
 }
